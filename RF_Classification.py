@@ -41,7 +41,7 @@ import time
 
 from gnuradio import qtgui
 
-class FM_class(gr.top_block, Qt.QWidget):
+class RF_Classification(gr.top_block, Qt.QWidget):
 
     def __init__(self):
         gr.top_block.__init__(self, "RF Classification")
@@ -64,7 +64,7 @@ class FM_class(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "FM_class")
+        self.settings = Qt.QSettings("GNU Radio", "RF_Classification")
 
         try:
             if StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
@@ -279,7 +279,7 @@ class FM_class(gr.top_block, Qt.QWidget):
                 firdes.WIN_HAMMING,
                 6.76))
         self.hilbert_fc_0 = filter.hilbert_fc(65, firdes.WIN_HAMMING, 6.76)
-        self.fpga_ai_rf_classf_0 = fpga_ai.rf_classf('/home/root/gr-fpga_ai/examples/rfClassification.xmodel')
+        self.fpga_ai_rf_classf_0 = fpga_ai.rf_classf('/media/sd-mmcblk1p1/test-dpu/models/rfClassification.xmodel')
         self.blocks_vector_to_stream_0 = blocks.vector_to_stream(gr.sizeof_gr_complex*1, 1024)
         self.blocks_stream_to_vector_decimator_0 = blocks.stream_to_vector_decimator(
             item_size=gr.sizeof_gr_complex,
@@ -320,7 +320,7 @@ class FM_class(gr.top_block, Qt.QWidget):
 
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "FM_class")
+        self.settings = Qt.QSettings("GNU Radio", "RF_Classification")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -379,7 +379,7 @@ class FM_class(gr.top_block, Qt.QWidget):
 
 
 
-def main(top_block_cls=FM_class, options=None):
+def main(top_block_cls=RF_Classification, options=None):
 
     if StrictVersion("4.5.0") <= StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
         style = gr.prefs().get_string('qtgui', 'style', 'raster')
