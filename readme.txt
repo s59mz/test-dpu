@@ -33,7 +33,7 @@
 
 
 # To run RF Classification Application 
-./run_rf_class.sh
+./run_rf_classification	.sh
 
 
 
