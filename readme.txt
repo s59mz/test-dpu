@@ -32,6 +32,9 @@
  xdputil query
 
 
+# To run RF Classification Application 
+./run_rf_class.sh
+
 
 
 
