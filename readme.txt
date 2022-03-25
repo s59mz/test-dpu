@@ -41,7 +41,7 @@
 ####   Some details...
 
 # Set path to FPGA bin file before running any test scripts 
- export XLNX_VART_FIRMWARE=/media/sd-mmcblk1p1/dpu.xclbin
+ export XLNX_VART_FIRMWARE=/media/sd-mmcblk0p1/dpu.xclbin
 
  python3 test_performance.py 4 ./models/rfClassification.xmodel 1000
 
@@ -49,7 +49,7 @@
  python3 test_accuracy.py ./models/rfClassification.xmodel
 
 # Image Recognition test
- export LD_LIBRARY_PATH=/media/sd-mmcblk1p1/app/samples/lib
+ export LD_LIBRARY_PATH=/media/sd-mmcblk0p1/app/samples/lib
  ./dpu-test img/unknown_image.jpeg
  
 

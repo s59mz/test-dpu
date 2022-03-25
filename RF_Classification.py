@@ -279,7 +279,7 @@ class RF_Classification(gr.top_block, Qt.QWidget):
                 firdes.WIN_HAMMING,
                 6.76))
         self.hilbert_fc_0 = filter.hilbert_fc(65, firdes.WIN_HAMMING, 6.76)
-        self.fpga_ai_rf_classf_0 = fpga_ai.rf_classf('/media/sd-mmcblk1p1/test-dpu/models/rfClassification.xmodel')
+        self.fpga_ai_rf_classf_0 = fpga_ai.rf_classf('/media/sd-mmcblk0p1/test-dpu/models/rfClassification.xmodel')
         self.blocks_vector_to_stream_0 = blocks.vector_to_stream(gr.sizeof_gr_complex*1, 1024)
         self.blocks_stream_to_vector_decimator_0 = blocks.stream_to_vector_decimator(
             item_size=gr.sizeof_gr_complex,

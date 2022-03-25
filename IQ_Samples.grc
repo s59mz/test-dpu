@@ -106,7 +106,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    model_filename: /media/sd-mmcblk1p1/test-dpu/models/rfClassification.xmodel
+    model_filename: /media/sd-mmcblk0p1/test-dpu/models/rfClassification.xmodel
   states:
     bus_sink: false
     bus_source: false
@@ -119,12 +119,12 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    classes_file: /media/sd-mmcblk1p1/test-dpu/rf_classes.npy
+    classes_file: /media/sd-mmcblk0p1/test-dpu/rf_classes.npy
     comment: ''
     index: '100'
     maxoutbuf: '0'
     minoutbuf: '0'
-    samples_file: /media/sd-mmcblk1p1/test-dpu/rf_input.npy
+    samples_file: /media/sd-mmcblk0p1/test-dpu/rf_input.npy
   states:
     bus_sink: false
     bus_source: false
